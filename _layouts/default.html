@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh-cn">
+{% include header.html %}
+
+<body>
+  <div id="container">
+    <div id="main" role="main">
+      <header>
+        <h1>{{ page.title }}</h1>
+      </header>
+      <nav>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="about" class="" href="/about/">About</a></span>
+        <span><a title="guestbook" class="" href="/guestbook/">Guestbook</a></span>
+        <span><a title="categories" class="" href="/categories/">Categories</a></span>
+        <span><a title="tags" class="" href="/tags/">Tags</a></span>
+        <span><a title="links" class="" href="/links/">Links</a></span>
+        <span><a title="subscribe by RSS" class="" href="/feed.xml">Subscribe</a></span>
+      </nav>
+      <nav2>
+        <span><a title="home page" class="" href="/">Home</a></span>
+        <span><a title="links" class="" href="/links/">Links</a></span>
+      </nav2>
+      <article class="content">
+        {{ content }}
+      </article>
+    </div>
+
+    <footer>
+      <p><small>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> | Hosted on <a href="https://github.com/zhaohao">Github.com</a> | Last Update：{{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</small></p>
+    </footer>
+
+  </div>
+  <div class="overlay"></div>
+</body>
+
+</html>

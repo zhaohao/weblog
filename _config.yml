@@ -1,0 +1,14 @@
+# Build settings
+permalink: /:year-:month-:day-:title.html
+url: https://hao.zhao.im
+author: hao.zhao.im
+plugins: [jekyll-paginate]
+markdown: kramdown
+highlighter: rouge
+# commentscomponent: disqus or gitalk or closecomments
+commentscomponent: closecomments
+excerpt_separator: <!--more-->
+paginate: 50
+# Sass
+sass:
+  style: compressed

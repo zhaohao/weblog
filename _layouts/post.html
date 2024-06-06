@@ -1,0 +1,67 @@
+---
+layout: default
+---
+<section class="post">
+{{ content }}
+<table border="0">
+<tr>
+  <td style="border-top: #00a8a8 .5em solid;">
+  <div id="qrcode" style="box-shadow: inset #287a7b 0px 0px 6px 6px; float: left; padding: 10px; margin:.5em 1em .5em 0;" ></div>
+  </td>
+  
+  <td style="border-top: #bc265e .5em solid;">
+    <span class="">日志编译时间: {{page.date | date:"%Y-%m-%d %H:%M:%S %Z"}}</span>
+    <br>
+    <span class="">日志固定链接: <a href="{{ site.url }}{{ page.url }}">{{ page.url }}</a></span>
+  </td>
+</tr>
+</table>
+</section>
+<section class="meta">
+<span class="author">
+  <a href="/">{{ site.author }}</a>
+</span>
+<span class="time">
+  /
+  <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
+</span>
+<br />
+
+{% if page.categories %}
+<span class="categories">
+  Published in categories
+  {% for cat in page.categories %}
+  <a href="/categories/index.html#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+  {% endfor %}
+</span>
+{% endif %}
+{% if page.tags %}
+<span class="tags">
+  tagged with 
+  {% for tag in page.tags %}
+  <a href="/tags/index.html#{{ tag }}" title="{{ tag }}">{{ tag }}</a>&nbsp;
+  {% endfor %}
+</span>
+{% endif %}
+</ br>
+{% if page.comments %}
+{% include {{site.commentscomponent}}.md %}
+{% endif %}
+<P>
+  {% if page.next %}
+    <span class="postnavleft">
+    <a href="{{ page.next.url }}">◄上一篇[←/K]</a>
+  {% else %}
+    <span class="next disabled">　</span>
+    </span>
+  {% endif %}
+  <span>　</span>
+  {% if page.previous %}
+    <span class="postnavright">
+    <a href="{{ page.previous.url }}">[J/→]下一篇►</a>
+  {% else %}
+    <span class="postnavleft">◢</span>
+    </span>
+  {% endif %}
+</P>
+</section>
